@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-xir-bg text-xir-text font-body antialiased;
+    background-image: theme("backgroundImage.xir-glow"), theme("backgroundImage.xir-grid");
+    background-size: 100% 100%, 120px 120px;
+    background-position: center;
+  }
+
+  ::selection {
+    background: rgba(30, 90, 70, 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(30, 90, 70, 0.7);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+  }
+
+  .sheen {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 35%),
+      linear-gradient(300deg, rgba(31, 122, 90, 0.12), transparent 45%),
+      rgba(255, 255, 255, 0.01);
+  }
+}
