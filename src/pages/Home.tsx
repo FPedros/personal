@@ -354,7 +354,7 @@ function SectionHeader({ eyebrow, title, copy }: { eyebrow: string; title: strin
   return (
     <div className="max-w-3xl space-y-3">
       <Badge>{eyebrow}</Badge>
-      <h2 className="font-heading text-3xl tracking-tight text-white md:text-4xl">{title}</h2>
+      <h2 className="font-heading text-3xl uppercase tracking-[0.12em] text-white md:text-4xl">{title}</h2>
       <p className="text-xir-silver leading-relaxed">{copy}</p>
     </div>
   );
@@ -367,14 +367,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-50 border-b border-xir-line/80 bg-xir-bg/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-none items-center justify-between px-4 py-4 md:px-8">
-          <a href="#" className="flex items-center gap-2 text-sm font-semibold tracking-[0.18em]">
-            <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-xir-panel">
-              <span className="absolute inset-0 sheen" />
-              <img src="/logo-xiron.png" alt="XIRON" className="relative h-10 w-auto object-contain" />
-            </span>
+        <div className="mx-auto flex w-full max-w-none items-center justify-between px-4 py-2.5 md:px-8">
+          <a href="#" className="flex items-center gap-3 text-sm font-semibold tracking-[0.18em]">
+            <img src="/logo-xiron.png" alt="XIRON" className="h-18 w-auto object-contain" />
           </a>
-          <nav className="hidden items-center gap-7 text-sm text-xir-silver md:flex">
+          <nav className="hidden items-center gap-7 text-sm uppercase tracking-[0.16em] text-xir-silver md:flex">
             {t.nav.map((item) => (
               <a
                 key={item.href}
@@ -416,7 +413,9 @@ export default function Home() {
           <div className="space-y-7">
             <Badge>{t.hero.badge}</Badge>
             <div className="space-y-3">
-              <h1 className="font-heading text-4xl leading-tight text-white md:text-5xl">{t.hero.title}</h1>
+              <h1 className="font-heading text-4xl uppercase tracking-[0.14em] leading-tight text-white md:text-5xl">
+                {t.hero.title}
+              </h1>
               <p className="text-lg leading-relaxed text-xir-silver">{t.hero.subtitle}</p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -805,8 +804,8 @@ export default function Home() {
 
       <footer className="border-t border-xir-line/80 bg-black/60 px-5 py-8 text-sm text-xir-muted md:px-8">
         <div className="mx-auto flex w-full max-w-none flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-2">
-            <img src="/logo-xiron.png" alt="XIRON" className="h-10 w-auto" />
+          <div className="flex items-center gap-3">
+            <img src="/logo-xiron.png" alt="XIRON" className="h-12 w-auto object-contain" />
             <span>{locale === "en" ? "Tech services · Conversion · Automation" : "Serviços tech · Conversão · Automação"}</span>
           </div>
           <div className="flex gap-3 text-[11px] uppercase tracking-[0.16em] text-xir-silver">

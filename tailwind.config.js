@@ -18,8 +18,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        heading: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
-        body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+        heading: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       borderRadius: {
         md: "12px",
