@@ -66,7 +66,7 @@ const slides: Slide[] = [
             ].map(([label, value]) => (
               <div key={label} className="flex items-center justify-between rounded-lg bg-xir-panel/50 px-3 py-2">
                 <span className="text-white">{label}</span>
-                <span className="text-xir-muted">{value}</span>
+                <span className="text-xir-muted whitespace-nowrap">{value}</span>
               </div>
             ))}
           </div>
@@ -119,10 +119,13 @@ const slides: Slide[] = [
               ["Plano", "Hostinger (atual)", "Nova hospedagem (sugerida)"],
               ["Valor", "R$ 203,88/ano", "R$ 15,00/mês ou R$ 180,00/ano"]
             ].map(([label, a, b]) => (
-              <div key={label} className="grid grid-cols-3 items-center gap-2 text-xs md:text-sm">
+              <div
+                key={label}
+                className="grid grid-cols-1 items-start gap-1 rounded-md bg-xir-bg/40 p-2 text-xs md:grid-cols-3 md:items-center md:gap-2 md:text-sm"
+              >
                 <span className="text-xir-muted">{label}</span>
-                <span className="text-white">{a}</span>
-                <span className="text-xir-silver">{b}</span>
+                <span className="text-white break-words md:whitespace-nowrap">{a}</span>
+                <span className="text-xir-silver break-words md:whitespace-nowrap">{b}</span>
               </div>
             ))}
           </div>
@@ -166,7 +169,7 @@ const slides: Slide[] = [
             {["R$ 40,00/ano", "R$ 76,00/2 anos", "R$ 184,00/5 anos"].map((item) => (
               <li key={item} className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-xir-accent" />
-                <span>{item}</span>
+                <span className="whitespace-nowrap">{item}</span>
               </li>
             ))}
           </ul>
@@ -189,7 +192,9 @@ const slides: Slide[] = [
         </div>
         <div className="grid gap-2">
           <p className="text-white text-lg">Custo do serviço</p>
-          <p className="text-white">Cortesia (R$ 0,00)</p>
+          <p className="text-white">
+            Cortesia <span className="whitespace-nowrap">(R$ 0,00)</span>
+          </p>
           <p>Custos recorrentes (cliente): Registro do domínio conforme opção escolhida.</p>
         </div>
         <div className="text-xs uppercase tracking-[0.16em] text-xir-muted">QualificMais • Proposta Comercial</div>
@@ -247,7 +252,7 @@ const slides: Slide[] = [
         </div>
         <div className="grid gap-2">
           <p className="text-white text-lg">Custo do serviço</p>
-          <p className="text-white">R$ 150,00</p>
+          <p className="text-white whitespace-nowrap">R$ 150,00</p>
           <p>Custos recorrentes (cliente): licenças Google Workspace/Microsoft 365 (se aplicável).</p>
         </div>
         <div className="text-xs uppercase tracking-[0.16em] text-xir-muted">QualificMais • Proposta Comercial</div>
@@ -284,7 +289,7 @@ const slides: Slide[] = [
             ].map((item) => (
               <li key={item} className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-xir-accent" />
-                <span>{item}</span>
+                <span className="whitespace-nowrap">{item}</span>
               </li>
             ))}
           </ul>
@@ -326,8 +331,6 @@ export default function Proposal() {
             </div>
           </div>
           <div className="flex items-center gap-3 text-sm uppercase tracking-[0.18em]">
-            <span className="hidden sm:inline text-xir-muted print:text-black">Data</span>
-            <span>{proposalDate}</span>
             <Button className="hidden md:inline-flex print:hidden" onClick={handleDownload}>
               Baixar PDF
             </Button>

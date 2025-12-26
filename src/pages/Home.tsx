@@ -354,7 +354,7 @@ function SectionHeader({ eyebrow, title, copy }: { eyebrow: string; title: strin
   return (
     <div className="max-w-3xl space-y-3">
       <Badge>{eyebrow}</Badge>
-      <h2 className="font-heading text-3xl uppercase tracking-[0.12em] text-white md:text-4xl">{title}</h2>
+      <h2 className="font-heading text-3xl leading-snug text-white md:text-4xl break-words">{title}</h2>
       <p className="text-xir-silver leading-relaxed">{copy}</p>
     </div>
   );
@@ -413,7 +413,7 @@ export default function Home() {
           <div className="space-y-7">
             <Badge>{t.hero.badge}</Badge>
             <div className="space-y-3">
-              <h1 className="font-heading text-4xl uppercase tracking-[0.14em] leading-tight text-white md:text-5xl">
+              <h1 className="font-heading text-4xl leading-tight text-white md:text-5xl break-words">
                 {t.hero.title}
               </h1>
               <p className="text-lg leading-relaxed text-xir-silver">{t.hero.subtitle}</p>
